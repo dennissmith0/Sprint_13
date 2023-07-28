@@ -1,0 +1,17 @@
+In this project, we were given a dataset of Yelp coffee shop reviews and our main task was to clean and analyze this text data. 
+The cleaning process involved a number of steps, including the removal of unnecessary characters, conversion to lowercase, and tokenization. 
+Tokenization is the process of breaking down text into individual words or "tokens". This is a crucial step in preparing text data for Natural Language Processing (NLP) tasks. 
+We used two different techniques for tokenization: a custom tokenizer using regular expressions, and spaCy, a popular library for NLP tasks.
+
+After tokenizing the reviews, we proceeded to count the frequency of each token in the dataset. To visualize this data, we created a bar plot of the 20 most frequent tokens. 
+To further refine our tokens, we implemented lemmatization, which is the process of reducing words to their base or root form (e.g., "running" to "run"). 
+This helps in combining different forms of the same word, which can be useful in many NLP tasks.
+
+Next, we split the data into "good" and "bad" reviews based on the star ratings, and created separate visualizations for the most common tokens in each category.
+This provided some interesting insights into what words were most commonly associated with positive and negative reviews.
+
+Finally, we used the cleaned and tokenized text data to create a document-term matrix using Scikit-Learn's CountVectorizer, which represents the frequency of tokens in each document.
+This matrix was used to train a model to find similar reviews based on their content.
+
+Overall, this project gave us an opportunity to apply various NLP techniques, such as tokenization, lemmatization, and vectorization, to a real-world dataset.
+It also demonstrated the importance of iterative data cleaning, as we continuously refined our tokenization process based on the results of our analyses.
