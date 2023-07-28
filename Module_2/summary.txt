@@ -1,0 +1,15 @@
+In our second project, we worked on representing text data in vector form using different techniques and utilizing those representations for similarity searching.
+We first cleaned our raw text data by removing HTML tags, which is a common issue when web scraping. We used the BeautifulSoup library to accomplish this.
+
+Next, we tokenized our clean text data using the spaCy library. This step involved breaking down the text into individual words or "tokens",
+and also involved removing stop words, punctuation, and white spaces.
+
+After tokenizing, we transformed our text data into numerical representations.
+We first used the CountVectorizer from Scikit-Learn to create a document-term matrix where each row represented a document and each column represented a unique word in all the documents.
+The value in each cell represented the count of a word in a particular document.
+
+We then used the TfidfVectorizer to transform our text data into a TF-IDF feature matrix. TF-IDF (Term Frequency-Inverse Document Frequency) is a technique that not only counts the occurrences
+of words in a document (like CountVectorizer) but also weighs the counts by the inverse of the frequency of the words in the entire corpus, thus giving more importance to words that are unique to a document.
+
+Finally, we trained a NearestNeighbors model on our document-term matrix to find similar job descriptions based on a given job query. We used both the CountVectorizer representation and the TF-IDF
+representation to see if there was any significant difference in the results.
