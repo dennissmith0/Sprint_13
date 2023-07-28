@@ -10,7 +10,7 @@ We focused on representing text data in vector form and utilizing those represen
 
 We then trained a NearestNeighbors model on our document-term matrix to find similar job descriptions based on a given job query. This allowed us to see how different vector representations of the text data could influence the results of the similarity search. Our work demonstrated the importance of thoughtful text preprocessing and the power of vector representations for exploring and analyzing text data.
 
-# Module 3: Document Classification and Sentiment Analysis in Whiskey Reviews
+# Module 3: Document Classification in Whiskey Reviews
 Assignment 3 centered on the task of document classification, where our goal was to classify whiskey reviews into different categories based on the text of the reviews. The initial stage involved cleaning the text data to ensure that our models would be learning from clear, consistent information. This included removing unwanted characters and normalizing the text.
 
 Next, we set up our data for machine learning by defining our feature (the review text) and the target variable (the review's rating category). We then employed a series of different machine learning models, including RandomForestClassifier, GradientBoostingClassifier, XGBClassifier, CatBoostClassifier, and LGBMClassifier. These models were integrated into a pipeline with a TF-IDF Vectorizer, which transformed the text data into a numerical format that the models could process.
