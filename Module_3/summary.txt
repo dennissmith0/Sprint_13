@@ -1,0 +1,15 @@
+An exploration into document classification, specifically focused on classifying whiskey reviews into their respective categories. The data consisted of whiskey reviews and their corresponding rating categories. The goal was to train a machine learning model to predict the rating category of a whiskey review.
+
+The project involved several steps. First, the text data was cleaned to remove unwanted characters and standardize the text. This is a crucial step in any Natural Language Processing (NLP) task as it reduces noise in the data and makes it easier for the model to learn.
+
+Next, we split the data into features and target variables. The feature was the text of the review, and the target was the rating category of the review.
+
+We then constructed a pipeline that involved vectorizing the text data using TF-IDF Vectorizer, and then passing the vectorized data to a machine learning model. We experimented with different models, including RandomForestClassifier, GradientBoostingClassifier, XGBClassifier, CatBoostClassifier, and LGBMClassifier.
+
+We also implemented a grid search with cross-validation to optimize the hyperparameters of the pipeline. This step was crucial in improving the model's performance.
+
+In the latter part of the project, we experimented with Latent Semantic Analysis (LSA), a technique for reducing the dimensionality of text data and uncovering hidden topics within it. We built a pipeline that first applied LSA to the data (by using a TF-IDF Vectorizer and TruncatedSVD), and then passed the transformed data to a classifier.
+
+We also used Spacy to perform word embedding on the data and trained a RandomForestClassifier on the word vectors. The out-of-bag score of this model served as a proxy for the test score.
+
+Finally, we explored sentiment analysis and Singular Value Decomposition (SVD), two important concepts in NLP and machine learning, respectively.
