@@ -1,0 +1,59 @@
+Question: When we complete a topic analysis what are we trying to do?
+
+Answer: Labeling documents in a corpus with the topics (groups of words) that were found in the document.
+
+Explanation: Topic analysis is a form of dimensionality reduction where you're trying to identify the underlying themes or topics in the documents. You're not calculating any vectors or finding topics based on your interests. You're using the documents themselves to discover the topics.
+
+Question: What type of technique is latent dirichlet allocation (LDA)?
+
+Answer: An unsupervised clustering technique.
+
+Explanation: LDA is an unsupervised learning method that automatically assigns topics to unlabelled text data. It's not a classification, word-embedding, or a dimension-reduction technique.
+
+Question: Do we need to specify the number of topics to find before we fit a topic model?
+
+Answer: Yes - the topic modeling algorithms we've considerer (LSI, LDA) can't learn the number of topics, only what the topics are.
+
+Explanation: In both LSI and LDA, we have to provide the number of topics we want the model to return. The models don't inherently determine the optimal number of topics.
+
+Question: What is one way to interpret topics when comparing them to each other?
+
+Answer: We can compare word distributions within topics to see how much overlap there is between topics.
+
+Explanation: Topics are distributions over words. If topics share many words with high probabilities, they overlap in terms of the subject matter they cover.
+
+Question: When looking at the pyLDAvis, what can we say about topic bubbles that overlap?
+
+Answer: They share a number of common words; the more they overlap, the more words they share.
+
+Explanation: In the pyLDAvis visualization, topics that overlap have a significant number of shared words, meaning that they discuss similar themes or subjects.
+
+Question: What does the following Gensim code produce? Assume that df['tokens'] is a column of a DataFrame containing tokenized text, with one document per row. corpora.Dictionary(df['tokens'])
+
+Answer: Creates a mapping between words and their integer IDs.
+
+Explanation: The Gensim corpora.Dictionary() function creates a mapping between words in the corpus and their corresponding integer IDs. This mapping is necessary for other functions in Gensim that work with numerical libraries and expect IDs, not strings as input.
+
+Question: What does the following code return? Assume that df['tokens'] is a column of a DataFrame containing tokenized text, with one document per row and id2word is a mapping between the words and their integer IDs. [id2word.doc2bow(text) for text in df['tokens']]
+
+Answer: Counts the number of occurrences of each distinct word, converts the word to its integer ID, and then returns the result as a sparse vector.
+
+Explanation: The doc2bow function counts the number of occurrences of each distinct word, maps the word to its integer id and returns the result as a sparse vector. The sparse vector is a list of tuples where each tuple contains an id and its frequency in the document.
+
+Question: What are the two main inputs to an LDA topic model using gensim?
+
+Answer: The dictionary (map of the words to their ID) and the corpus (the counts for each word in the dictionary).
+
+Explanation: The LDA model in Gensim requires two main inputs: the dictionary (which maps words to their integer IDs) and the corpus (which is a document-term matrix with counts of each word in the dictionary for each document).
+
+Question: Why do we need to specify the number of topics when we fit an LDA model?
+
+Answer: The number of topics is not learned by the LDA model; it's a model hyperparameter that we have set.
+
+Explanation: The number of topics is not something that the LDA model learns from the data. It is a hyperparameter that we must set before running the model.
+
+Question: What is the significance of the distance between topics on the pyLDAvis Intertopic Distance plot of the Amazon reviews text?
+
+Answer: Topics that are closer together on the axes are more similar.
+
+Explanation: On the pyLDAvis intertopic distance plot, topics that are closer together are more similar to each other. This is because the distance on this plot is a measure of semantic similarity. The closer the topics, the more similar they are in terms of the words that constitute the topics.
