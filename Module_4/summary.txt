@@ -1,0 +1,11 @@
+We focused on understanding and implementing topic modeling on a corpus of Amazon electronics reviews. The key objective was to unearth the latent thematic structure within this collection of reviews. The process involved the following stages:
+
+Data Cleaning: Initially, the raw text data was cleaned to eliminate unwanted characters, punctuation, and other forms of noise. This involved utilizing regular expressions and other text manipulation techniques, leading to the creation of a 'clean_text' column in the dataset.
+
+Tokenization: Subsequently, the documents were tokenized. This process involved breaking down the text into individual words or tokens. Lemmatization was performed as part of this step to reduce words to their base or root form (for example, converting 'running' to 'run'). This was accomplished using the SpaCy library, resulting in a 'lemmas' column in the dataset.
+
+Corpora Preparation and Topic Modeling: Using the corpora class from the Gensim library, a dictionary (id2word) and a Bag of Words representation of the data (corpus) were created. These resources were then utilized to perform Latent Dirichlet Allocation (LDA), a popular topic modeling technique. The optimal number of topics for the LDA model was determined using a grid search. The model's performance was evaluated using the coherence score, and the resulting topics were visualized using PyLDAvis.
+
+Topic Assignment: Lastly, the most probable topic was assigned to each document in the corpus. A lookup dictionary was created to map topic ids to topic names. These were then added as new columns ('topic_id' and 'new_topic_name') to the dataset.
+
+In conclusion, the dataset of Amazon electronics reviews was enriched with topic information for each document, providing a thematic summary of the reviews.
