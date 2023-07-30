@@ -1,0 +1,7 @@
+Tokenization: The function tokenize is designed to take in a text document and return a list of tokens (words) extracted from the document. The function utilizes the SpaCy library to perform tokenization, lemmatization, and removal of stop words and punctuation. This function is essential for pre-processing the text data for further analysis.
+
+Vector Representation: This section involves creating a document-term matrix (DTM) that provides a vector representation of the reviews. The DTM is created using the TF-IDF (Term Frequency-Inverse Document Frequency) Vectorizer, which assigns a weight to each word in a document based on its frequency in the document and its rarity in the corpus. Additionally, a Nearest Neighbors model is trained on the DTM to find reviews that are most similar to a given review.
+
+Classification: Here, a classification model is created using a pipeline that includes a TF-IDF Vectorizer and a K-nearest neighbors classifier. The model is trained to predict the 'stars' feature, which represents the rating given in a review. A GridSearchCV is employed to optimize the parameters of the model.
+
+Topic Modeling: In this part, a Latent Dirichlet Allocation (LDA) model is used for topic modeling. The LDA model is an unsupervised machine learning model that identifies topics in a corpus of documents. The number of topics is set to 5 in this case. The results of the topic modeling are visualized using pyLDAvis, a Python library for interactive topic model visualization.
